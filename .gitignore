@@ -1,0 +1,10 @@
+# Кеш и временные файлы
+*.log
+*.tmp
+*.swp
+.DS_Store
+
+# Системные папки
+node_modules/
+vendor/
+.env
