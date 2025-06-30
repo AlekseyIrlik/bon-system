@@ -1,28 +1,36 @@
 <?php
 /*
 Plugin Name: Bon System
+Text Domain: bon-system
+Plugin URI: https://github.com/AlekseyIrlik/bon-system
 Description: Плагин для начисления бонов и управления школьниками
-Version: 1.0
-Author: Алексей
+Version: 0.1
+Author: Aleksey Irlik
 */
 
 defined('ABSPATH') or die('No script kiddies please!');
 
-// пункт меню в админке
-add_action('admin_menu', 'bon_system_menu');
+//Хук создания пунктов меню в админке
+add_action('admin_menu', 'show_bon_system_menu');
 
-function bon_system_menu() {
+
+// Инициализация разделов в админке
+function show_bon_system_menu()
+{
     add_menu_page(
         'Bon System',           // Заголовок страницы
         'Bon System',           // Название меню
         'manage_options',       // Права доступа (администратор)
         'bon-system',           // Слаг страницы
-        'bon_system_admin_page' // Функция отображения
+        'bon_system_admin_page', // Функция отображения
+        'dashicons-money-alt', // Иконка
+        // position of menu: int | null
     );
 }
 
-// Содержимое страницы
-function bon_system_admin_page() {
+// Содержимое страницы Bon System
+function bon_system_admin_page()
+{
     echo '<div class="wrap">';
     echo '<h1>Добро пожаловать в Bon System!</h1>';
     echo '<p>Здесь будет панель администратора.</p>';
